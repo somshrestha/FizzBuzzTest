@@ -36,5 +36,18 @@ namespace FizzBuzzUnitTests.HelpersTests
             // Assert
             Assert.AreEqual(expectedResult, actualResult);
         }
+
+        [TestMethod]
+        public void Divisable_ShouldReturn_Fifteen()
+        {
+            // Arrange
+            var expectedResult = 15;
+
+            // Act
+            var actualResult = _fizzBuzzHelper.DivisableBy;
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
     }
 }

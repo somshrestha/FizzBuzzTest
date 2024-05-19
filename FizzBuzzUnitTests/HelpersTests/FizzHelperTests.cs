@@ -10,7 +10,6 @@ namespace FizzBuzzUnitTests.HelpersTests
         public FizzHelperTests()
         {
             _fizzHelper = new FizzHelper();
-
         }
 
         [TestMethod]
@@ -34,6 +33,19 @@ namespace FizzBuzzUnitTests.HelpersTests
 
             // Act
             var actualResult = _fizzHelper.GetResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+        [TestMethod]
+        public void Divisable_ShouldReturn_Three()
+        {
+            // Arrange
+            var expectedResult = 3;
+
+            // Act
+            var actualResult = _fizzHelper.DivisableBy;
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

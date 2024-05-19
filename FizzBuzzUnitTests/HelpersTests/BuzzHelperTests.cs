@@ -12,7 +12,6 @@ namespace FizzBuzzUnitTests.HelpersTests
             _buzzHelper = new BuzzHelper();
         }
 
-
         [TestMethod]
         public void IsMatch_ShouldReturnTrue_WhenTheNumberPassedIsDivisibleByFive()
         {
@@ -34,6 +33,20 @@ namespace FizzBuzzUnitTests.HelpersTests
 
             // Act
             var actualResult = _buzzHelper.GetResult();
+
+            // Assert
+            Assert.AreEqual(expectedResult, actualResult);
+        }
+
+
+        [TestMethod]
+        public void Divisable_ShouldReturn_Five()
+        {
+            // Arrange
+            var expectedResult = 5;
+
+            // Act
+            var actualResult = _buzzHelper.DivisableBy;
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

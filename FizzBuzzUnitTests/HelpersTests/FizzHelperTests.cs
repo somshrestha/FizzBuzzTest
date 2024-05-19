@@ -2,6 +2,7 @@
 
 namespace FizzBuzzUnitTests.HelpersTests
 {
+    // Commit failed tests
     [TestClass]
     public class FizzHelperTests
     {

@@ -4,12 +4,12 @@
     {
         public bool IsMatch(int number)
         {
-            throw new NotImplementedException();
+            return number % 3 == 0 && number % 5 == 0;
         }
 
         public string GetResult()
         {
-            throw new NotImplementedException();
+            return "Fizzbuzz";
         }
     }
 }

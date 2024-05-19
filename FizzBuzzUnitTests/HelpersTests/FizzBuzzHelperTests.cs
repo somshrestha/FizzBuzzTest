@@ -2,7 +2,6 @@
 
 namespace FizzBuzzUnitTests.HelpersTests
 {
-    // Commit failed tests
     [TestClass]
     public class FizzBuzzHelperTests
     {
@@ -19,7 +18,7 @@ namespace FizzBuzzUnitTests.HelpersTests
             var expectedResult = true;
 
             // Act
-            var actualResult = _fizzBuzzHelper.IsMatch(10);
+            var actualResult = _fizzBuzzHelper.IsMatch(30);
 
             // Assert
             Assert.AreEqual(expectedResult, actualResult);

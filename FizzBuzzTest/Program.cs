@@ -6,7 +6,7 @@ Console.WriteLine("Hello, World!");
 var fizzbuzzService = new FizzBuzzLoaderService();
 
 var rules = fizzbuzzService.LoadRules();
-var processor = new FizzBuzzService(rules);
+var processor = new FizzBuzzService();
 
 for (int i = 1; i < 100; i++)
 {

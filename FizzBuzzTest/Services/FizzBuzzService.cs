@@ -5,16 +5,11 @@ namespace FizzBuzzTest.Services
 {
     public class FizzBuzzService
     {
-        private readonly IEnumerable<IFizzBuzzRule> _fizzBuzzRules;
-
-        public FizzBuzzService(IEnumerable<IFizzBuzzRule> rules)
-        {
-            _fizzBuzzRules = rules;
-        }
 
         public string Process(int number)
         {
-            foreach (var rule in _fizzBuzzRules)
+            var fizzBuzzRules = this.LoadRules();
+            foreach (var rule in fizzBuzzRules)
             {
                 var isMatch = rule.IsMatch(number);
 
@@ -24,6 +19,17 @@ namespace FizzBuzzTest.Services
                 }
             }
             return number.ToString();
+        }
+
+        public IEnumerable<IFizzBuzzRule> LoadRules()
+        {
+            var rules = Assembly.GetExecutingAssembly().GetTypes()
+                                    .Where(t => typeof(IFizzBuzzRule).IsAssignableFrom(t) && !t.IsInterface)
+                                    .Select(rt => (IFizzBuzzRule)Activator.CreateInstance(rt))
+                                    .OrderByDescending(rt => rt.DivisableBy)
+                                    .ToList();
+
+            return rules;
         }
     }
 }

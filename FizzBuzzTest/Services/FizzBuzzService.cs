@@ -21,7 +21,7 @@ namespace FizzBuzzTest.Services
             return number.ToString();
         }
 
-        public IEnumerable<IFizzBuzzRule> LoadRules()
+        private IEnumerable<IFizzBuzzRule> LoadRules()
         {
             var rules = Assembly.GetExecutingAssembly().GetTypes()
                                     .Where(t => typeof(IFizzBuzzRule).IsAssignableFrom(t) && !t.IsInterface)
